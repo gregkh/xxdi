@@ -26,8 +26,7 @@ my $outdata;
 # to '_', or, if this is stdin, just use "stdin" as the name.
 if (@ARGV) {
 	$var_name = $ARGV[0];
-	$var_name =~ s/\//_/g;
-	$var_name =~ s/\./_/g;
+	$var_name =~ s/[\.\/\$]/_/g;
 } else {
 	$var_name = "stdin";
 }
